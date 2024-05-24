@@ -1,11 +1,14 @@
 import './App.css';
 import MyCard from './components/MyCard';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import { useState, useEffect } from 'react';
 
 function App() {
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character/1,183')
+    fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8,9,183')
       .then((res) => {
         return res.json();
       })
@@ -17,13 +20,22 @@ function App() {
   return (
     <div className="App">
       <h1>The rick and Morty api</h1>      
-      <div>      
+      <Container> 
+        <Row>  
         {characters.map((character) => (
-          <>
-            <MyCard characterName={character.name} characterImage={character.image}></MyCard>
-          </>
+          <Col>
+            <MyCard 
+              characterName={character.name} 
+              characterImage={character.image}
+              characterSpecies={character.species}
+              characterCreated={character.created}
+              characterLocation={character.location.name}
+            >
+            </MyCard>
+          </Col>
         ))}
-      </div>
+        </Row>   
+      </Container>
       
     </div>
   );

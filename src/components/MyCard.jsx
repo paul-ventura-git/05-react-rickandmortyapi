@@ -15,9 +15,9 @@ function MyCard( props ) {
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Cras justo odio</ListGroup.Item>
-        <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-        <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+        <ListGroup.Item>Species: {props.characterSpecies}</ListGroup.Item>
+        <ListGroup.Item>Created: {props.characterCreated}</ListGroup.Item>
+        <ListGroup.Item>Location: {props.characterLocation}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
         <Button variant="primary" style={{ marginRight: '20px' }}>Go somewhere</Button>

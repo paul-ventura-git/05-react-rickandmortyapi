@@ -3,7 +3,11 @@ import MyCard from './components/MyCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from 'react';
+
+import Home from "./pages/Home";
+import Product from "./pages/Products";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -19,7 +23,14 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <h1>The rick and Morty api</h1>      
+      <h1>The Rick and Morty api</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:productId" element={<Product />} />
+        </Routes>
+      </BrowserRouter>
+
       <Container> 
         <Row>  
         {characters.map((character) => (

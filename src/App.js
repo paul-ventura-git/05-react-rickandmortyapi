@@ -19,10 +19,12 @@ function App() {
       <h1>The rick and Morty api</h1>      
       <div>      
         {characters.map((character) => (
-          <img key={character.id} src={character.image} alt={character.name} width={400} />
+          <>
+            <MyCard characterName={character.name} characterImage={character.image}></MyCard>
+          </>
         ))}
       </div>
-      <MyCard></MyCard>
+      
     </div>
   );
 }

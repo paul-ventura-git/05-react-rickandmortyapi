@@ -23,8 +23,9 @@ function App() {
       <Container> 
         <Row>  
         {characters.map((character) => (
-          <Col>
+          <Col key={character.id}>
             <MyCard 
+              key={character.id}
               characterName={character.name} 
               characterImage={character.image}
               characterSpecies={character.species}

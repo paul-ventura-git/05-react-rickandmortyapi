@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import AllProducts from '../components/AllProducts';
+import AllProducts from '../components/ProductsCard';
 
 function Product() {
   const { productId } = useParams();

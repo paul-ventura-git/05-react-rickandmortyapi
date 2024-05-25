@@ -3,20 +3,21 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 
-function AllProducts( props ) {
+function CharactersCard( props ) {
   return (
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={props.productImage} />
+      <Card.Img variant="top" src={props.characterImage} />
       <Card.Body>
-        <Card.Title>{props.productTitle}</Card.Title>
+        <Card.Title>{props.characterName}</Card.Title>
         <Card.Text>
-          {props.productDescription}
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
         </Card.Text>
       </Card.Body>
       <ListGroup className="list-group-flush">
-        <ListGroup.Item>Category: {props.productCategory}</ListGroup.Item>
-        <ListGroup.Item>Price: {props.productPrice}</ListGroup.Item>
-        <ListGroup.Item>Rating: {props.productRating}</ListGroup.Item>
+        <ListGroup.Item>Species: {props.characterSpecies}</ListGroup.Item>
+        <ListGroup.Item>Created: {props.characterCreated}</ListGroup.Item>
+        <ListGroup.Item>Location: {props.characterLocation}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
         <Button variant="primary" style={{ marginRight: '20px' }}>Go somewhere</Button>
@@ -26,4 +27,4 @@ function AllProducts( props ) {
   )
 }
 
-export default AllProducts
+export default CharactersCard

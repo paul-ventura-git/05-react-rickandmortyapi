@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import MyCard from '../components/MyCard';
+import CharactersCard from '../components/CharactersCard';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -23,7 +23,7 @@ function AllCharactersPage() {
         <Row>  
         {characters.map((character) => (
           <Col key={character.id}>
-            <MyCard 
+            <CharactersCard 
               key={character.id}
               characterName={character.name} 
               characterImage={character.image}
@@ -31,7 +31,7 @@ function AllCharactersPage() {
               characterCreated={character.created}
               characterLocation={character.location.name}
             >
-            </MyCard>
+            </CharactersCard>
           </Col>
         ))}
         </Row>   

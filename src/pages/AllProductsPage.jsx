@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import AllProducts from '../components/ProductsCard';
+import ProductsCard from '../components/ProductsCard';
 
 function AllProductsPage() {
   const { productId } = useParams();
@@ -28,7 +28,7 @@ function AllProductsPage() {
         <Row>  
         {products.map((product) => (
           <Col key={product.id}>
-            <AllProducts 
+            <ProductsCard 
               key={product.id}
               productTitle={product.title} 
               productImage={product.image}
@@ -36,7 +36,7 @@ function AllProductsPage() {
               productPrice={product.price}
               productRating={product.rating.rate}
             >
-            </AllProducts>
+            </ProductsCard>
           </Col>
         ))}
         </Row>   

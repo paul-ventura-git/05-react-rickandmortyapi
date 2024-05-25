@@ -7,9 +7,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function MyNavbar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
-      <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+    <Navbar className="bg-body-tertiary mb-5" bg="dark" data-bs-theme="dark">
+      <Container fluid style={{ marginLeft: '38rem', marginRight: '38rem' }}>
+        <Navbar.Brand href="#">Dynamic URLs</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -20,6 +20,8 @@ function MyNavbar() {
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/allproducts">All Products</Nav.Link>
             <Nav.Link href="/allcharacters">All Characters</Nav.Link>
+            <Nav.Link href="/product">Product by Id</Nav.Link>
+            <Nav.Link href="/character">Character by Id</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">

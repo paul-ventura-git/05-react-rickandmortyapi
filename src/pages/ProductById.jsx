@@ -6,10 +6,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import AllProducts from '../components/ProductsCard';
+import ProductsCard from '../components/ProductsCard';
 
-function Product() {
-  const { productId } = useParams();
+function ProductById() {
+  let { productId } = useParams();
   
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -18,31 +18,28 @@ function Product() {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
+        
         setProducts(data);
       });
   }, [productId]);
   return (
     <div>
       <Container> 
-        <Row>  
-
+        <Row>
           <Col key={products.id}>
-            <AllProducts 
+            <ProductsCard 
               key={products.id}
               productTitle={products.title} 
               productImage={products.image}
               productDescription={products.description}
-              productPrice={products.price}
-              
+              productPrice={products.price}              
             >
-            </AllProducts>
+            </ProductsCard>
           </Col>
-
         </Row>   
       </Container>
     </div>
   )
 }
 
-export default Product
+export default ProductById

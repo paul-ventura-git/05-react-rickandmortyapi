@@ -1,5 +1,5 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 
 import Container from 'react-bootstrap/Container';
@@ -8,12 +8,12 @@ import Col from 'react-bootstrap/Col';
 
 import CharactersCard from '../components/CharactersCard';
 
-function AllCharactersPage() {
+function CharacterById() {
   let { characterId } = useParams();
-
+  
   const [characters, setCharacters] = useState([]);
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8,9,183')
+    fetch('https://rickandmortyapi.com/api/character/'+characterId)
       .then((res) => {
         return res.json();
       })
@@ -25,24 +25,23 @@ function AllCharactersPage() {
   return (
     <div>
       <Container> 
-        <Row>  
-        {characters.map((character) => (
-          <Col key={character.id}>
+        <Row>
+          <Col key={characters.id}>
             <CharactersCard 
-              key={character.id}
-              characterName={character.name} 
-              characterImage={character.image}
-              characterSpecies={character.species}
-              characterCreated={character.created}
-              characterLocation={character.location.name}
+              key={characters.id}
+              characterName={characters.name}
+              characterImage={characters.image}
+              characterSpecies={characters.species}
+              characterCreated={characters.created}
+              
             >
+
             </CharactersCard>
           </Col>
-        ))}
         </Row>   
       </Container>
     </div>
   )
 }
 
-export default AllCharactersPage
+export default CharacterById

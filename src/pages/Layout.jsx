@@ -1,23 +1,13 @@
 import { Outlet, Link } from "react-router-dom";
+import MyNavbar from "../components/MyNavbar";
+import MyFooter from "../components/MyFooter";
 
 const Layout = () => {
   return (
     <>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/allproducts">All Products</Link>
-          </li>
-          <li>
-            <Link to="/allcharacters">All Characters</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <MyNavbar></MyNavbar>
       <Outlet />
+      <MyFooter></MyFooter>
     </>
   )
 };

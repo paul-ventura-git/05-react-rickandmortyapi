@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/Col';
 
 import AllProducts from '../components/AllProducts';
 
-function Product() {
+function AllProductsPage() {
   const { productId } = useParams();
   
   const [products, setProducts] = useState([]);
@@ -23,7 +23,7 @@ function Product() {
       });
   }, [productId]);
   return (
-    <div>
+    <>
       <Container> 
         <Row>  
         {products.map((product) => (
@@ -41,8 +41,8 @@ function Product() {
         ))}
         </Row>   
       </Container>
-    </div>
+    </>
   )
 }
 
-export default Product
+export default AllProductsPage

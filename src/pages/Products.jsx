@@ -13,7 +13,7 @@ function Product() {
   
   const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
+    fetch('https://fakestoreapi.com/products/'+productId)
       .then((res) => {
         return res.json();
       })
@@ -26,19 +26,19 @@ function Product() {
     <div>
       <Container> 
         <Row>  
-        {products.map((product) => (
-          <Col key={product.id}>
+
+          <Col key={products.id}>
             <AllProducts 
-              key={product.id}
-              productTitle={product.title} 
-              productImage={product.image}
-              productDescription={product.description}
-              productPrice={product.price}
-              productRating={product.rating.rate}
+              key={products.id}
+              productTitle={products.title} 
+              productImage={products.image}
+              productDescription={products.description}
+              productPrice={products.price}
+              
             >
             </AllProducts>
           </Col>
-        ))}
+
         </Row>   
       </Container>
     </div>
